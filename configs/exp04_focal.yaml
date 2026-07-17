@@ -1,0 +1,36 @@
+# Exp04 - Focal Loss + WIoU
+model: yolov8s.pt
+data: data/aluminum/data.yaml
+
+epochs: 100
+imgsz: 640
+batch: 16
+patience: 20
+
+loss:
+  cls_loss:
+    type: FocalLoss
+    enabled: true
+    gamma: 2.0
+    alpha: 0.25
+  box_loss:
+    type: WIoU
+    enabled: true
+
+optimizer: SGD
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+box: 7.5
+cls: 0.5
+dfl: 1.5
+
+project: experiments/exp04_focal
+name: focal_wiou_run
+exist_ok: true

@@ -1,0 +1,32 @@
+# Exp02 - CBAM注意力模块
+model: yolov8s_cbam.pt
+data: data/aluminum/data.yaml
+
+epochs: 100
+imgsz: 640
+batch: 16
+patience: 20
+
+attention:
+  type: CBAM
+  enabled: true
+  reduction_ratio: 16
+  kernel_size: 7
+
+optimizer: SGD
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+box: 7.5
+cls: 0.5
+dfl: 1.5
+
+project: experiments/exp02_cbam
+name: cbam_run
+exist_ok: true

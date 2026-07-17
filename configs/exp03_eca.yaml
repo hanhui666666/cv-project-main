@@ -1,0 +1,31 @@
+# Exp03 - ECA注意力模块
+model: yolov8s_eca.pt
+data: data/aluminum/data.yaml
+
+epochs: 100
+imgsz: 640
+batch: 16
+patience: 20
+
+attention:
+  type: ECA
+  enabled: true
+  kernel_size: 3
+
+optimizer: SGD
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+box: 7.5
+cls: 0.5
+dfl: 1.5
+
+project: experiments/exp03_eca
+name: eca_run
+exist_ok: true

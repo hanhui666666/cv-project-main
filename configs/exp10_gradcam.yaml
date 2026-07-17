@@ -1,0 +1,29 @@
+# Exp10 - Grad-CAM可视化
+model: checkpoints/best.pt
+data: data/aluminum/data.yaml
+
+imgsz: 640
+
+gradcam:
+  enabled: true
+  target_layer: model.model[-2].cv3.0.act
+  method: GradCAMPlusPlus
+  colormap: jet
+  alpha: 0.5
+
+  output_dir: experiments/exp10_gradcam/heatmaps
+  save_overlay: true
+  save_heatmap: true
+  save_comparison: true
+
+visualization:
+  class_names:
+    0: 划痕
+    1: 凹坑
+    2: 氧化
+    3: 脏污
+    4: 其他
+
+report:
+  output_dir: experiments/exp10_gradcam
+  filename: comparison_report.md

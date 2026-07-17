@@ -1,0 +1,23 @@
+# Exp07 - RT-DETR对比
+model: rtdetr-l.pt
+data: data/aluminum/data.yaml
+
+epochs: 100
+imgsz: 640
+batch: 16
+patience: 20
+
+optimizer: AdamW
+lr0: 0.0001
+lrf: 0.01
+weight_decay: 0.0001
+
+warmup_epochs: 3.0
+
+box: 7.5
+cls: 0.5
+dfl: 1.5
+
+project: experiments/exp07_rtdetr
+name: rtdetr_run
+exist_ok: true
