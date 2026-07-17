@@ -1,0 +1,35 @@
+# 深度学习框架
+torch==2.7.0
+torchvision==0.24.0
+
+# 目标检测框架
+ultralytics==8.3.0
+
+# 数据增强
+albumentations==1.4.0
+
+# 计算机视觉
+opencv-python==4.10.0
+opencv-python-headless==4.10.0
+
+# 可视化
+matplotlib==3.9.0
+seaborn==0.13.0
+
+# 数据处理
+numpy==1.26.0
+pandas==2.2.0
+pillow==10.3.0
+
+# 可解释性
+pytorch-grad-cam==0.4.0
+
+# 其他工具
+tqdm==4.66.0
+pyyaml==6.0.1
+scikit-learn==1.5.0
+scipy==1.13.0
+
+# 可选：Jupyter（本地调试用）
+# jupyter==1.0.0
+# ipython==8.25.0
