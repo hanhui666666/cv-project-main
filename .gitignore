@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# 前端缓存
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+# 本地配置文件（避免把本地密钥上传）
+*.local
+.env
+*.ini
+*.cfg
+# 编辑器缓存
+.idea/
+.vscode/
